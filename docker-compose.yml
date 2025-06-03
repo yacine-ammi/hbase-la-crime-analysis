@@ -1,0 +1,32 @@
+version: '3.8' # Specifies the version of the Docker Compose file format
+
+services:
+  hbase:
+    image: harisekhon/hbase:latest # Using a pre-built HBase image
+    container_name: hbase
+    hostname: hbase-docker # Important for HBase to correctly identify itself
+    ports:
+      - "8080:8080"   # HBase Master Web UI (general info, tables)
+      - "8085:8085"   # HBase Master Info Web UI (more detailed status)
+      - "9090:9090"   # HBase RegionServer Web UI
+      - "9095:9095"   # HBase RegionServer Info Web UI
+      - "2181:2181"   # ZooKeeper (HBase depends on this for coordination)
+      - "16000:16000" # HBase Master RPC (not typically exposed externally)
+      - "16010:16010" # HBase Master Web UI (same as 8080 in some configs, good to have)
+      - "16020:16020" # HBase RegionServer RPC (not typically exposed externally)
+      - "16030:16030" # HBase RegionServer Web UI (same as 9090 in some configs)
+    volumes:
+      - hbase_data:/hbase_data # Persists HBase data even if the container stops
+    environment:
+      # These environment variables might be specific to the image to configure HBase
+      # For harisekhon/hbase, it often autoconfigures. If issues arise, we might need to add specific HBase configs.
+      HBASE_CONF_hbase_master_hostname: hbase-docker
+      HBASE_CONF_hbase_regionserver_hostname: hbase-docker
+      # HBASE_CONF_hbase_zookeeper_quorum: hbase-docker # Usually not needed if ZK runs within the HBase container
+
+  # Optional: HBase UI (like HBase Manager or Phoenix/SQLLine for querying if you want SQL-like access)
+  # For this assignment, we'll stick to HBase Shell and HappyBase, so a separate UI isn't strictly necessary.
+  # If you wanted one, you might add another service here, e.g., for Apache Phoenix Query Server.
+
+volumes:
+  hbase_data: # Defines the named volume for data persistence
