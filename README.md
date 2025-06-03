@@ -25,13 +25,14 @@ The project follows these main stages:
 - GitHub for version control and submission
 
 ## Project Structure
-├── docker-compose.yml # Docker Compose configuration for HBase
-├── sample_crimes_data.csv # The raw dataset (if you choose to include it)
-├── eda_crime_data.ipynb # Part 1: Exploratory Data Analysis
-├── hbase_insertion.ipynb # Part 3: Data Cleaning & Insertion (or .py script)
-├── hbase_retrieval.ipynb # Part 5: Data Retrieval with Python (or .py script)
-├── report.pdf # Final project report
-└── README.md # This file
+
+  ├── docker-compose.yml # Docker Compose configuration for HBase
+  ├── sample_crimes_data.csv # The raw dataset (if you choose to include it)
+  ├── eda_crime_data.ipynb # Part 1: Exploratory Data Analysis
+  ├── hbase_insertion.ipynb # Part 3: Data Cleaning & Insertion (or .py script)
+  ├── hbase_retrieval.ipynb # Part 5: Data Retrieval with Python (or .py script)
+  ├── report.pdf # Final project report
+  └── README.md # This file
 
 
 ## Setup and Execution
@@ -41,6 +42,7 @@ The project follows these main stages:
 - Git installed.
 - Python 3.x installed.
 - A Python virtual environment is highly recommended.
+- Crime_Data_from_2020_to_Present.csv in the project root to be downloaded from https://catalog.data.gov/dataset/crime-data-from-2020-to-present/resource/5eb6507e-fa82-4595-a604-023f8a326099.
 
 ### 1. Clone the Repository (If applicable, for someone else running it)
 If you are cloning this project:
