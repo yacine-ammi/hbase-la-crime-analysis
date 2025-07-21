@@ -25,11 +25,25 @@ The project follows these main stages:
 ```
 .
 ├── docker-compose.yml                  # Docker Compose configuration for HBase
-├── sample_crimes_data.csv              # The raw dataset (if you choose to include it)
 ├── eda_crime_data.ipynb                # Part 1: Exploratory Data Analysis
 ├── hbase_insertion_retrieval.ipynb     # Part 2 & 3: Data Insertion & Retrieval
 └── README.md                           # This file
 ```
+      
+## Data Source
+
+The dataset used in this project is **not included in this repository** due to GitHub's file size limit of 100 MB.
+
+You can download the required `Crime_Data_from_2020_to_Present.csv` file from the Google Drive link below:
+
+- **[Download `Crime_Data_from_2020_to_Present.csv` from Google Drive](https://drive.google.com/file/d/1kaMwbu88yNr0rie-CZSQROkDxinJ7lNb/view?usp=sharing)**
+
+**Instructions:**
+1. Click the link above.
+2. On the Google Drive page, click the download icon (a downward arrow) in the top-right corner to save the file.
+3. Place the downloaded `Crime_Data_from_2020_to_Present.csv` file in the root directory of this project before running the Python notebooks.
+
+    
 
 ## Setup and Execution
 
